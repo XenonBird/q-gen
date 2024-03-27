@@ -19,7 +19,7 @@
         border-radius: 1rem;
         background-color: #fff8f8;
       }
-      button {
+      .button {
         all: unset;
         font-weight: 600;
         margin-top: 0.5rem;
@@ -30,7 +30,7 @@
         cursor: pointer;
         transition: 0.25s;
       }
-      button:hover {
+      .button:hover {
         box-shadow: 0 0 0 #aaa;
       }
       .input-container > button {
@@ -38,18 +38,13 @@
       }
       .input-groups {
         margin-top: 0.5rem;
-      }
-      .input-groups > select,
-      .input-groups > label {
-        padding: 0.3rem 0.5rem;
-      }
-
-      #output-container {
-        display: grid;
-        grid-template-columns: 1fr;
+        display: flex;
         gap: 1rem;
-        /* font-family: 'Courier New', Courier, monospace;
-        font-weight: bold; */
+      }
+      .input-groups > * {
+        max-width: 100px;
+        padding: 1rem 2rem;
+        text-align: center;
       }
     </style>
     <title>Vite App</title>
@@ -59,31 +54,10 @@
       <div id="input-container">
         <h2>Generate your question</h2>
         <div class="input-groups">
-          <label for="ben"
-            ><input type="checkbox" id="ben" /> Bengali numerals</label
-          ><br />
-          <select id="problem-type">
-            <option value="+" selected>Addition (+)</option>
-            <option value="-">Subtraction (-)</option>
-            <option value="x">Multiplication (x)</option>
-            <option value="÷">division (÷)</option>
-          </select>
-          <select id="digit">
-            <option value="1" selected>1 digit</option>
-            <option value="2">2 digit</option>
-            <option value="3">3 digit</option>
-            <option value="4">4 digit</option>
-          </select>
-        </div>
-        <div>
-          <button id="generate-button">Generate</button>
-          <button id="clear-button">Clear</button>
+          <a class="button" href="/src/questions-in-list.html">As list</a>
+          <a class="button" href="/src/questions-in-box.html">As Box </a>
         </div>
       </div>
-
-      <div id="output-container"></div>
     </div>
-
-    <script type="module" src="/src/main.js"></script>
   </body>
 </html>

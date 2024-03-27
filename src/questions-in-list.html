@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/style.css" />
+    <style>
+      #app {
+        display: flex;
+        flex-direction: column;
+        padding: 1rem;
+        gap: 1rem;
+        background-color: #efeeee;
+      }
+      #input-container,
+      #output-container {
+        padding: 1rem;
+        border-radius: 1rem;
+        background-color: #fff8f8;
+      }
+      button {
+        all: unset;
+        font-weight: 600;
+        margin-top: 0.5rem;
+        padding: 0.25rem 0.5em;
+        border-radius: 0.5rem;
+        border: 1px solid #444;
+        box-shadow: 0 0.12rem 0.25rem #aaa;
+        cursor: pointer;
+        transition: 0.25s;
+      }
+      button:hover {
+        box-shadow: 0 0 0 #aaa;
+      }
+      .input-container > button {
+        background-color: #8d8;
+      }
+      .input-groups {
+        margin-top: 0.5rem;
+      }
+      .input-groups > select,
+      .input-groups > label {
+        padding: 0.3rem 0.5rem;
+      }
+
+      #output-container {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        /* font-family: 'Courier New', Courier, monospace;
+        font-weight: bold; */
+      }
+    </style>
+    <title>Vite App</title>
+  </head>
+  <body>
+    <div id="app">
+      <div id="input-container">
+        <h2>Generate your question (List style)</h2>
+        <div class="input-groups">
+          <label for="ben"
+            ><input type="checkbox" id="ben" /> Bengali numerals</label
+          ><br />
+          <select id="problem-type">
+            <option value="addition" selected>Addition (+)</option>
+            <option value="subtraction">Subtraction (-)</option>
+            <option value="multiplication">Multiplication (x)</option>
+            <option value="division">division (÷)</option>
+          </select>
+          <select id="digit">
+            <option value="1" selected>1 digit</option>
+            <option value="2">2 digit</option>
+            <option value="3">3 digit</option>
+            <option value="4">4 digit</option>
+          </select>
+        </div>
+        <div>
+          <button id="generate-button">Generate</button>
+          <button id="clear-button">Clear</button>
+        </div>
+      </div>
+
+      <div id="output-container"></div>
+    </div>
+
+    <script type="module" src="./questions-in-list.js"></script>
+  </body>
+</html>
